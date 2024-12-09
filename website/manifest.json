@@ -1,0 +1,15 @@
+{
+  "name": "Swahili-English Dictionary",
+  "short_name": "Swa-Eng Dictionary",
+  "id":"/index.html",
+  "start_url": "index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fdfdfd",
+  "icons": [
+    {
+      "src": "/static/book.png",
+      "type": "image/png", "sizes": "144x144"
+    }
+  ]
+}

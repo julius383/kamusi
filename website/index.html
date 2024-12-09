@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Swahili-English Dictionary</title>
+  </head>
+  <style>
+  </style>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="static/book.png" />
+  <link rel="stylesheet" href="css/pico.min.css" />
+  <link rel="stylesheet" href="css/pico.colors.min.css" />
+  <style>
+  .random {
+    display: grid;
+    justify-items: center;
+  }
+  .title {
+    text-align: center;
+  }
+  :root {
+    color-scheme: light;
+  }
+  form input[type=submit] {
+    border-radius: 5rem;
+  }
+  </style>
+  <body>
+    <header>
+    </header>
+    <main class="container-fluid" style="max-width: 90vw">
+      <h1 class="title"> Swahili<->English Dictionary </h1>
+      <section>
+        <form role="group">
+            <input name="search" type="search" placeholder="Search" id="search-box"/>
+            <input type="submit" value="Search" />
+        </form>
+        <div class="random" >
+          <button class="outline secondary" onclick="randomWord()">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M3 3m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
+              <circle cx="8.5" cy="8.5" r=".5" fill="currentColor" />
+              <circle cx="15.5" cy="8.5" r=".5" fill="currentColor" />
+              <circle cx="15.5" cy="15.5" r=".5" fill="currentColor" />
+              <circle cx="8.5" cy="15.5" r=".5" fill="currentColor" />
+            </svg>
+            Random Word
+          </button>
+        </div>
+      </section>
+      <hr />
+      <details open>
+        <summary style="text-align: center">Word of The Day</summary>
+        <article id="word-of-day">
+          word of the day
+        </article>
+      </details>
+      <hr />
+      <section id="search-results" style="display: none;">
+        Results
+      </section>
+    </main>
+  </body>
+  <script src="js/elasticlunr.js"></script>
+  <script src="js/app.js"></script>
+  <script>
+  let form = document.querySelector("form");
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    let query = event.target.search.value;
+    searchWord(query);
+  });
+  </script>
+</html>

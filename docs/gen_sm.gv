@@ -1,0 +1,35 @@
+digraph list {
+label=DictEntryMachine;
+fontname=Arial;
+fontsize=10;
+rankdir=LR;
+i [shape=circle, style=filled, fontsize=1, fixedsize=true, width=0.2, height=0.2, fillcolor=black];
+i -> start [label="", color=blue, fontname=Arial, fontsize=9];
+alternates [label="Alternates\nentry / extract_alternates", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+alternates -> stop [label=parse, color=blue, fontname=Arial, fontsize=9];
+english [label="English\nentry / extract_english", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+english -> examples [label="parse\n[has_example]", color=blue, fontname=Arial, fontsize=9];
+english -> alternates [label="parse\n[has_alternates]", color=blue, fontname=Arial, fontsize=9];
+english -> english [label="parse\n[has_multiple_defs]", color=blue, fontname=Arial, fontsize=9];
+english -> stop [label=parse, color=blue, fontname=Arial, fontsize=9];
+examples [label="Examples\nentry / extract_example", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+examples -> english [label="parse\n[has_multiple_defs]", color=blue, fontname=Arial, fontsize=9];
+examples -> alternates [label="parse\n[has_alternates]", color=blue, fontname=Arial, fontsize=9];
+examples -> stop [label=parse, color=blue, fontname=Arial, fontsize=9];
+extra [label="Extra\nentry / extract_extra", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+extra -> pos [label=parse, color=blue, fontname=Arial, fontsize=9];
+ngeli [label="Ngeli\nentry / extract_ngeli", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+ngeli -> english [label=parse, color=blue, fontname=Arial, fontsize=9];
+plural [label="Plural\nentry / extract_plural", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+plural -> ngeli [label=parse, color=blue, fontname=Arial, fontsize=9];
+pos [label="Pos\nentry / extract_pos", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+pos -> plural [label="parse\n[is_noun, has_plural]", color=blue, fontname=Arial, fontsize=9];
+pos -> ngeli [label="parse\n[is_noun]", color=blue, fontname=Arial, fontsize=9];
+pos -> english [label=parse, color=blue, fontname=Arial, fontsize=9];
+start [label=Start, shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+start -> swahili [label="parse\n[head_bold]", color=blue, fontname=Arial, fontsize=9];
+stop [label=Stop, shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=2, fillcolor=white];
+swahili [label="Swahili\nentry / extract_swahili", shape=rectangle, style="rounded, filled", fontname=Arial, fontsize=10, peripheries=1, fillcolor=white];
+swahili -> extra [label="parse\n[has_extra]", color=blue, fontname=Arial, fontsize=9];
+swahili -> pos [label=parse, color=blue, fontname=Arial, fontsize=9];
+}

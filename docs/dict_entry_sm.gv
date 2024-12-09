@@ -1,0 +1,35 @@
+digraph G {
+  rankdir=LR;
+  node [shape = doublecircle]; stop;
+  node [shape = circle];
+  start; 
+  swahili;
+  extra;
+  part_of_speech;
+  noun;
+  plural;
+  ngeli;
+  english;
+  examples;
+  alternates;
+  stop [label="stop", color="red"];
+
+  start -> swahili;
+  swahili -> part_of_speech;
+  swahili -> extra [label="if has extra"]; 
+  extra -> part_of_speech
+  part_of_speech -> noun [label="if pos == noun"];
+  part_of_speech -> english;
+  noun -> plural;
+  noun -> ngeli;
+  plural -> ngeli;
+  ngeli -> english;
+  english -> examples [label="if has examples"];
+  english -> alternates [label="if has alternates but no examples"];
+  english -> english [label="if has multiple definitions"];
+  english -> stop;
+  examples -> english [label="if has multiple definitions"];
+  examples -> alternates [label="if has alternates"];
+  examples -> stop;
+  alternates -> stop;
+}
