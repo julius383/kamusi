@@ -56,7 +56,7 @@ function setResults(html) {
 
 function setWordOfDay() {
   let wod = document.querySelector("#word-of-day");
-  wod.innerHTML = formatEntry(searchIdx.documentStore.getDoc(2958));
+  wod.innerHTML = formatEntry(searchIdx.documentStore.getDoc(2935));
 }
 
 function searchWord(query) {
