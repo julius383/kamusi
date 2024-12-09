@@ -2,7 +2,7 @@ let searchIdx = null;
 
 async function getIndex() {
   try {
-    const response = await fetch("/static/search_index.json");
+    const response = await fetch("https://julius383.github.io/kamusi/static/search_index.json");
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
