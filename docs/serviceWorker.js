@@ -7,7 +7,7 @@ const assets = [
   "/js/elasticlunr.js",
   "/css/pico.colors.min.css",
   "/css/pico.min.css",
-  "/static/book.png",
+  "https://julius383.github.io/kamusi/static/book.png",
   "https://julius383.github.io/kamusi/static/search_index.json",
 ]
 
