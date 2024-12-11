@@ -8,7 +8,7 @@
   "background_color": "#fdfdfd",
   "icons": [
     {
-      "src": "/static/book.png",
+      "src": "static/book.png",
       "type": "image/png", "sizes": "144x144"
     }
   ]
