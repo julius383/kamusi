@@ -42,8 +42,7 @@ Then run `python kamusi.py`
 
 
 - [ ] TODO: add link to GitHub repo to PWA 
-- [ ] TODO: update requirements.txt
 
 [1]: https://duckdb.org
 [2]: https://rich.readthedocs.io/en/stable/
-[3]: https://julius383.github.io/kamusi
+[3]: https://julius383.github.io/posts-output/2024-12-09-extracting-structured-data-from-pdf-files/
