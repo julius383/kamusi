@@ -8,7 +8,7 @@ const assets = [
   "/css/pico.colors.min.css",
   "/css/pico.min.css",
   "/static/book.png",
-  "/static/search_index.json",
+  "https://julius383.github.io/kamusi/static/search_index.json",
 ]
 
 self.addEventListener("install", installEvent => {
